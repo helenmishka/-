@@ -1,0 +1,9 @@
+#!/bin/bash
+for (( i = 1; i <= 5; i++ ))
+do
+echo test\#$i:
+file_in="./functests/in_$i.txt"
+file_out="./functests/out_$i.txt"
+./app.exe < $file_in > out.txt
+diff -s results.txt $file_out
+done
